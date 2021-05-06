@@ -1,6 +1,7 @@
 import sys, os
 import pyperclip
 import pyshorteners
+
 from tkinter import *
 
 from pyshorteners.exceptions import ShorteningErrorException, BadURLException
