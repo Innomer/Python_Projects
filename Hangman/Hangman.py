@@ -1,10 +1,3 @@
-# from tkinter import *
-# import sys,os
-
-# window=Tk()
-# window.geometry("1000x1000")
-# window.resizable(False,False)
-# window.title("Hangman")
 
 import random
 from words import words
@@ -39,7 +32,9 @@ def hangman():
             if not(user_input in used_letters):
                 used_letters.add(user_input)
                 if user_input in letters_in_word:
-                    letters_in_word.remove(user_input) 
+                    letters_in_word.remove(user_input)
+                    if(lives<5):
+                        lives+=1
                 else:
                     lives-=1
                     print(f'{user_input} is not in the word')
@@ -50,7 +45,7 @@ def hangman():
         
         if lives==0:
             break
-    
+        print(f'You Have {lives} chances left!')
     if lives==0:
         print(f'You have used all your chances. The answer was : {word}')
     else:
